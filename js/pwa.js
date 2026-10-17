@@ -40,12 +40,32 @@
   }
   function hideBanner() { if (banner) banner.hidden = true; }
 
+  // Never interrupt the first impression: reveal the install offer only once
+  // the visitor has actually engaged (scrolled a little) or after a while.
+  var offerReady = false;
+  function revealBanner() {
+    if (!offerReady || !banner) return;
+    if (dismissed() || window.matchMedia('(display-mode: standalone)').matches) return;
+    if (!banner.hidden) return;
+    banner.hidden = false;
+  }
+  function engage() {
+    if (window.scrollY > 420) {
+      revealBanner();
+      window.removeEventListener('scroll', engage);
+    }
+  }
+  window.addEventListener('scroll', engage, { passive: true });
+  setTimeout(revealBanner, 14000);
+
   window.addEventListener('beforeinstallprompt', function (e) {
     e.preventDefault();
     deferredPrompt = e;
+    offerReady = true;
     // Only offer it once, and never inside an installed app
     if (dismissed() || window.matchMedia('(display-mode: standalone)').matches) return;
-    if (banner) banner.hidden = false;
+    // If they have already scrolled past the hero, show it straight away
+    if (window.scrollY > 420) banner.hidden = false;
   });
 
   if (accept) {
@@ -101,7 +121,8 @@
     if (copy) copy.textContent = 'Add Nabho Bazaar to your home screen';
     if (note) note.textContent = 'Tap Share, then “Add to Home Screen”.';
     if (btn) btn.textContent = 'Got it';
-    banner.hidden = false;
+    offerReady = true;
+    setTimeout(revealBanner, 9000);
     if (btn) {
       btn.addEventListener('click', function () {
         hideBanner();
