@@ -1,0 +1,5 @@
+.modern-address-form .btn-locate-gps{min-height:56px;padding:12px 20px;font-size:16px;justify-content:center;gap:10px}
+.modern-address-form .btn-locate-gps svg{width:22px;height:22px}
+.modern-address-form .btn-locate-gps:disabled{cursor:wait;opacity:.75}
+.modern-address-form .btn-locate-gps:focus-visible{outline:3px solid #137c48;outline-offset:3px}
+@media(max-width:640px){.modern-address-form .btn-locate-gps{width:100%;flex-basis:100%;min-height:56px}.modern-address-form :has(>.btn-locate-gps){flex-wrap:wrap}}

@@ -1,0 +1,78 @@
+/* Category photos fold into a compact, swipeable shelf. */
+.home-category-section{overflow-anchor:none}
+.home-category-section .section-title{gap:16px;align-items:center}
+.home-category-section .section-title h2{margin:0}
+.home-category-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.home-category-actions .btn-section-action{min-height:44px;padding:10px 15px;gap:7px}
+.category-fold{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:10px 14px;border:1px solid #d7d2c2;border-radius:24px;background:#fffcf4;color:#354a38;font:inherit;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 3px 8px #40341d06}
+.category-fold:hover{background:#eee9dc}
+.category-fold svg{transition:transform .35s}
+.is-compact .category-fold svg{transform:rotate(180deg)}
+.home-category-viewport{min-width:0;width:100%}
+.home-category-slider{display:flex;align-items:center;gap:10px;min-width:0}
+.category-rail-arrow{display:flex;align-items:center;justify-content:center;width:44px;height:44px;flex:0 0 44px;border:1px solid #d7d2c2;border-radius:50%;color:#354a38;background:#fffcf4;cursor:pointer}
+.category-rail-arrow[hidden]{display:none}
+.category-rail-arrow[data-home-cat-scroll="-1"] svg{transform:rotate(180deg)}
+.category-rail-arrow:disabled{opacity:.35;cursor:default}
+.home-category-section .category-tile{transform-origin:top left}
+.home-category-section.is-folding .home-category-viewport{overflow:hidden}
+.home-category-section.is-folding .categories{overflow:visible!important}
+.home-page .home-category-section.is-compact{margin-top:30px;margin-bottom:26px}
+.home-category-section.is-compact .section-title{padding-bottom:12px;border-bottom:0;margin-bottom:8px}
+.home-category-section.is-compact .section-title h2{font-size:25px;letter-spacing:-.025em}
+.home-page .home-category-section.is-compact .categories{display:flex;gap:10px;width:100%;overflow-x:auto;overflow-y:hidden;padding:5px 2px 9px;scrollbar-width:none;overscroll-behavior-x:contain;touch-action:pan-x pan-y;scroll-behavior:smooth}
+.home-category-section.is-compact .categories::-webkit-scrollbar{display:none}
+.home-page .home-category-section.is-compact .category-tile{display:flex;align-items:center;gap:9px;flex:0 0 auto;min-height:62px;max-width:none;padding:7px 13px 7px 7px;background:#fffcf7;border:1px solid #e1d8c7;border-radius:17px;box-shadow:0 3px 9px #60441e06;text-align:left;transition:background .2s,border-color .2s}
+.home-page .home-category-section.is-compact .category-tile:hover{background:#f7f0e3;border-color:#b8bf9f;transform:none}
+.home-page .home-category-section.is-compact .category-photo-frame{width:46px;height:46px;flex:0 0 46px;margin:0;border:0;border-radius:11px;box-shadow:none}
+.home-page .home-category-section.is-compact .category-tile strong{font-size:12px;line-height:1.35;max-width:112px;white-space:normal;margin:0}
+.home-category-section.is-compact+.section{margin-top:24px}
+.home-category-section button:focus-visible,.home-category-section a:focus-visible,.home-category-section .categories:focus-visible{outline:3px solid #b76a37;outline-offset:3px}
+.home-category-section .is-dragging{cursor:grabbing;user-select:none;scroll-behavior:auto!important}
+.home-category-section .is-dragging *{pointer-events:none}
+/* Keep shopping controls together and put products directly below them. */
+.shop-page .shop-layout{display:grid;grid-template-columns:minmax(0,1fr)!important;gap:0;margin:0}
+.shop-page .shop-cat-pills-bar{flex-wrap:nowrap;gap:12px;padding:0 0 14px!important;margin:0}
+.shop-page .category-scroll-shell{flex:1 1 0;flex-basis:0;min-width:0}
+.shop-page .shop-cat-pills-scroll{padding:3px 2px!important;scrollbar-width:none;scroll-snap-type:none}
+.shop-page .shop-cat-pills-scroll::-webkit-scrollbar{display:none}
+.shop-page .shop-sort-inline{min-width:0;flex:0 0 auto;margin:0}
+.shop-page .sort-inline-label{padding:0 12px;min-height:44px;gap:5px}
+.shop-page .shop-sort-inline select{width:110px;max-width:110px;padding:0 17px 0 3px!important;font-size:12px!important}
+.shop-page .shop-results{min-width:0;margin:0}
+.shop-page .shelf-filter-header{margin-top:0;padding-top:8px}
+.shop-page .category-shelf-section:first-child{margin-top:0}
+.home-page>.section[data-reveal],.home-page .section-title[data-reveal],.home-page .categories>[data-reveal],.home-page .product-rail>[data-reveal]{opacity:1;translate:none;transition:none;transition-delay:0ms!important}
+@media(max-width:700px){
+ .home-category-section .section-title{gap:8px;flex-wrap:nowrap}
+ .home-category-section .section-title h2{font-size:23px}
+ .home-category-actions{gap:5px}
+ .home-category-actions .btn-section-action{width:44px;padding:10px;justify-content:center}
+ .home-category-actions .btn-section-action span{display:none}
+ .category-fold{font-size:11px;padding:10px 11px;gap:4px}
+ .home-page .home-category-section.is-compact{margin-top:22px;margin-bottom:20px}
+ .home-category-section.is-compact .section-title h2{font-size:22px}
+ .category-rail-arrow{display:none}
+ .home-category-section.is-compact .home-category-slider{margin-right:-16px}
+ .home-page .home-category-section.is-compact .categories{padding-right:16px;scrollbar-width:none}
+ .home-category-section.is-compact .categories::-webkit-scrollbar{display:none}
+ .home-category-section.is-compact+.section{margin-top:20px}
+ .shop-page{padding-top:14px}
+ .shop-page .shop-cat-pills-bar{gap:8px;padding-bottom:8px!important}
+ .shop-page .category-scroll-arrow{display:none}
+ .shop-page .shop-cat-pill{min-height:44px;padding:9px 11px;font-size:12px}
+ .shop-page .shop-cat-pill .pill-count{font-size:10px}
+ .shop-page .sort-inline-label{padding:0 10px;border-radius:15px}
+ .shop-page .sort-inline-label>span{display:none}
+ .shop-page .shop-sort-inline select{width:88px;max-width:88px;height:44px!important;font-size:12px!important}
+ .shop-page .shelf-filter-header{gap:6px;flex-wrap:wrap;padding-bottom:12px}
+ .shop-page .shelf-filter-header h3{font-size:20px}
+}
+@media(max-width:380px){
+ .home-category-section .section-title h2,.home-category-section.is-compact .section-title h2{font-size:19px}
+ .category-fold{padding-inline:9px}
+}
+@media(prefers-reduced-motion:reduce){
+ .category-fold svg,.home-category-section .category-tile{transition:none!important}
+ .home-page .home-category-section.is-compact .categories{scroll-behavior:auto}
+}

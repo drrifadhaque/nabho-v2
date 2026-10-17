@@ -1,0 +1,17 @@
+.gallery-select-tag,
+.gallery-save-tag,
+.gallery-discount-chip,
+.gallery-img-wrap .discount,
+.pdp-hero-discount,
+.pdp-select-badge,
+.pdp-savings-badge,
+.pdp-speed-badge,
+.pdp-cashback-strip,
+.pdp-nutrition-summary,
+.pdp-nutrition-table,
+.pdp-serve-badge,
+.pdp-nut-pill,
+.pdp-usp-item{display:none!important}
+.gallery-card-top{justify-content:flex-end}
+.pdp-core-card .pdp-brand-row{margin-top:0}
+.pdp-core-card .pdp-price-wrap{margin-bottom:0}

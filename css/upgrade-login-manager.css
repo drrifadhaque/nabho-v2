@@ -1,0 +1,268 @@
+/* ============================================================
+   Nabho Bazaar — Upgrade layer v20261005-r2
+   (1) Google-first login redesign
+   (2) Store Manager desk retheme to the editorial identity
+   Loaded last so it wins the cascade. No layout breakage.
+   ============================================================ */
+
+/* =========================================================
+   PART 1 — LOGIN (Google-first)
+   ========================================================= */
+.auth-page .auth-composition{align-items:stretch}
+
+/* richer headline */
+.auth-intro h1 em{color:#ffc18a}
+.auth-intro .auth-brandline{
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;
+}
+.auth-intro .auth-brandline img{width:38px;height:38px;border-radius:10px;
+  box-shadow:0 8px 20px #0000003d}
+
+/* --- the sign-in card, rebuilt as: Google hero + secondary --- */
+#groceryCustomerStage .auth-box{padding:64px 34px 32px}
+.auth-card-content{text-align:center}
+.auth-card-kicker{color:#2c6a48;font-size:10px;letter-spacing:.16em}
+.auth-card-content h2{
+  font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.04em;
+  font-size:33px;margin:12px 0 6px;color:#1c3b2c;
+}
+.auth-card-lead{color:#5c6b60;font-size:14px;margin:0 0 22px}
+
+/* Google becomes the hero action */
+.google-btn-wrap{
+  display:flex;justify-content:center;align-items:center;
+  min-height:56px;margin:6px auto 8px;position:relative;
+}
+.google-btn-wrap>div{
+  box-shadow:0 10px 26px -10px #1c4e3255!important;
+  border-radius:999px!important;overflow:hidden;
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.google-btn-wrap>div:hover{transform:translateY(-2px);box-shadow:0 16px 32px -12px #1c4e3277!important}
+
+/* benefits row under the Google button */
+.auth-benefits{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;
+  margin:16px 0 6px;padding:0;list-style:none;
+}
+.auth-benefits li{
+  display:inline-flex;align-items:center;gap:7px;
+  font-family:Fragment,monospace;font-size:9.5px;letter-spacing:.06em;
+  text-transform:uppercase;color:#6b7a6e;
+}
+.auth-benefits li svg{color:#2c8a56}
+
+.google-pending{
+  font-family:Fragment,monospace;font-size:10px;letter-spacing:.05em;
+  color:#7d8a80;margin:8px 0;
+}
+.social-divider{
+  display:flex;align-items:center;gap:14px;margin:22px 0 16px;
+  font-family:Fragment,monospace;font-size:9px;letter-spacing:.14em;color:#9aa79c;
+}
+.social-divider:before,.social-divider:after{content:"";flex:1;height:1px;background:#e0e6dd}
+
+/* secondary = WhatsApp/OTP, softer */
+.auth-otp-pending,.auth-card-content form{
+  animation:authFade .5s ease both;
+}
+@keyframes authFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.auth-otp-pending{
+  display:inline-flex;align-items:center;gap:9px;padding:11px 16px;border-radius:999px;
+  background:#f3f6f1;color:#6b7a6e;font-size:12px;
+}
+.auth-otp-pending-dot{width:7px;height:7px;border-radius:50%;background:#d9a441;
+  box-shadow:0 0 0 4px #d9a44133;animation:otpPulse 1.6s ease-in-out infinite}
+@keyframes otpPulse{50%{opacity:.35}}
+.otp-box{border-color:#d7ddd3!important;text-align:center;font-size:19px;font-weight:700}
+.otp-box:focus{border-color:#2c8a56!important;box-shadow:0 0 0 3px #2c8a5633}
+
+/* trust footer inside card */
+.auth-trust{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  margin:20px 0 0;padding-top:16px;border-top:1px solid #ecefe8;
+  font-family:Fragment,monospace;font-size:9px;letter-spacing:.05em;color:#9aa79c;
+}
+
+/* =========================================================
+   PART 2 — STORE MANAGER RETHEME (editorial identity)
+   Scoped + high-specificity so it beats the base theme.
+   ========================================================= */
+
+/* admin login console */
+.page .grocery-auth-stage.admin-theme#groceryAdminStage{
+  background:
+   radial-gradient(ellipse 52% 68% at 88% 16%,rgba(217,164,65,.22),transparent 68%),
+   radial-gradient(ellipse 54% 66% at 4% 96%,rgba(121,172,124,.16),transparent 74%),
+   linear-gradient(134deg,#14211a 2%,#1c4e32 56%,#7c4326 128%)!important;
+}
+.page .grocery-auth-stage.admin-theme .auth-hero-banner,
+.page .grocery-auth-stage.admin-theme .grocery-badge-item{
+  border-color:#c3a47b55!important;
+}
+.page .grocery-auth-stage.admin-theme .eyebrow{color:#e7c58f!important}
+
+/* heading banner */
+.admin-page .manager-desk-heading,
+.manager-desk .manager-desk-heading{
+  background:linear-gradient(122deg,#171b14 0%,#1c4e32 58%,#8a4a29 128%)!important;
+  border:1px solid #c3a47b33;border-radius:22px!important;
+  box-shadow:0 22px 48px -22px #1c2b1f80;
+}
+.admin-page .manager-desk-heading h2,
+.manager-desk .manager-desk-heading h2{
+  font-family:Georgia,'Times New Roman',serif!important;font-weight:400!important;
+  letter-spacing:-.04em;font-size:32px!important;color:#fff6e6!important;
+}
+.admin-page .manager-desk-heading p,.manager-desk .manager-desk-heading p{color:#d8cdb4!important}
+.admin-page .manager-desk-heading .eyebrow,.manager-desk .manager-desk-heading .eyebrow{color:#e7c58f!important;letter-spacing:.14em}
+.admin-page .manager-sync .secondary,.manager-desk .manager-sync .secondary{
+  background:#ffffff1c!important;border-color:#e7c58f66!important;color:#f4ead6!important;
+}
+.admin-page .manager-sync-dot,.manager-desk .manager-sync-dot{color:#e4d9c2!important}
+
+/* KPI tiles */
+.admin-page .kpi-grid{gap:16px}
+.admin-page .kpi-card{
+  background:linear-gradient(160deg,#fffdf7,#f7f2e6)!important;
+  border:1px solid #e7ddc7!important;border-radius:16px!important;
+  box-shadow:3px 3px 0 #e9e2d0!important;
+  padding:18px 18px 16px!important;position:relative!important;overflow:hidden;
+}
+.admin-page .kpi-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:#d9a441}
+.admin-page .kpi-card small{
+  font-family:Fragment,monospace!important;font-size:9px!important;letter-spacing:.11em;
+  text-transform:uppercase;color:#8b7f66!important;display:block;margin-bottom:8px;
+}
+.admin-page .kpi-card strong{
+  font-family:Georgia,'Times New Roman',serif!important;font-weight:400!important;
+  font-size:27px!important;letter-spacing:-.03em;color:#26332a!important;
+}
+
+/* order desk panels */
+.admin-page .manager-order-group,.manager-desk .manager-order-group{
+  background:#fffdf7!important;border:1px solid #e7ddc7!important;border-radius:20px!important;
+}
+.admin-page .manager-group-heading h3,.manager-desk .manager-group-heading h3{
+  font-family:Georgia,'Times New Roman',serif!important;font-weight:400!important;
+  letter-spacing:-.03em;color:#26332a!important;
+}
+.admin-page .manager-order-card,.manager-desk .manager-order-card{
+  background:#fff!important;border:1px solid #e7ddc7!important;border-radius:15px!important;
+  box-shadow:0 10px 24px #2a231708!important;
+}
+.admin-page .manager-order-card.is-incoming,.manager-desk .manager-order-card.is-incoming{
+  border-color:#e6c79a!important;box-shadow:0 12px 28px #d9a44122!important;
+}
+
+/* nav tabs */
+.admin-page .admin-nav-tabs{gap:8px;flex-wrap:wrap}
+.admin-page .admin-nav-btn{
+  font-family:Fragment,monospace!important;font-size:11px!important;letter-spacing:.06em;
+  border:1px solid #e0d7c2!important;background:#fffdf7!important;color:#6b6250!important;
+  border-radius:999px!important;transition:all .22s ease;
+}
+.admin-page .admin-nav-btn:hover{background:#f5efe2!important;transform:translateY(-2px)}
+.admin-page .admin-nav-btn.active{
+  background:linear-gradient(122deg,#1c4e32,#2c8a56)!important;color:#fff!important;border-color:#1c4e32!important;
+  box-shadow:0 10px 22px -10px #1c4e3288;
+}
+
+/* =========================================================
+   PART 3 — ANIMATED DROP-PIN (Google Maps overlay)
+   ========================================================= */
+.map-frame-wrapper{position:relative}
+.nb-pin{
+  position:absolute;transform:translate(-50%,-100%);pointer-events:auto;
+  cursor:grab;touch-action:none;z-index:5;filter:drop-shadow(0 8px 10px #00000042);
+}
+.nb-pin.dragging{cursor:grabbing;filter:drop-shadow(0 16px 18px #00000055)}
+.nb-pin svg{display:block;transform-origin:50% 100%}
+.nb-pin-pulse{
+  position:absolute;left:50%;bottom:-4px;width:34px;height:34px;
+  transform:translate(-50%,50%) scale(.5);border-radius:50%;
+  border:2.5px solid #d33e0d;opacity:0;pointer-events:none;
+}
+/* drop: pin falls & bounces, ring ripples outward */
+.nb-pin.dropping svg{animation:nbDrop .72s cubic-bezier(.22,1.2,.36,1) both}
+.nb-pin.dropping .nb-pin-pulse{animation:nbPulse 1.05s ease-out .12s both}
+@keyframes nbDrop{
+  0%{transform:translateY(-46px) scale(.7);opacity:0}
+  55%{transform:translateY(3px) scale(1.08);opacity:1}
+  75%{transform:translateY(-3px) scale(.97)}
+  100%{transform:translateY(0) scale(1);opacity:1}
+}
+@keyframes nbPulse{
+  0%{opacity:.85;transform:translate(-50%,50%) scale(.5)}
+  100%{opacity:0;transform:translate(-50%,50%) scale(2.5)}
+}
+/* gentle idle bob while not dragging */
+.nb-pin:not(.dragging) svg{animation:nbBob 3.2s ease-in-out infinite}
+@keyframes nbBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+
+/* search dropdown polish */
+.map-search-dropdown{
+  border-radius:14px;border:1px solid #e4dccb;box-shadow:0 22px 48px -18px #2a231740;
+  overflow:hidden;animation:authFade .22s ease both;
+}
+.map-search-item{
+  display:flex;align-items:center;gap:11px;padding:11px 13px;cursor:pointer;
+  transition:background .18s ease,transform .18s ease;border-bottom:1px solid #f0eadd;
+}
+.map-search-item:last-child{border-bottom:0}
+.map-search-item:hover{background:#f6f1e4;transform:translateX(3px)}
+.map-search-item .search-item-icon{font-size:15px}
+.map-search-item strong{display:block;font-size:13px;color:#26332a}
+.map-search-item small{color:#8b7f66;font-size:11px}
+.map-search-item.empty,.map-search-item.searching{cursor:default;color:#8b7f66;font-size:12px}
+.map-search-item.empty:hover,.map-search-item.searching:hover{background:transparent;transform:none}
+
+/* =========================================================
+   PART 4 — CATEGORY TILE PHOTOS
+   ========================================================= */
+.category-tile .cat-thumb{
+  position:relative;display:block;border-radius:5px 16px 16px 5px;
+  overflow:hidden;height:118px;
+  background:color-mix(in srgb,var(--tint) 22%,#f4ecdd);
+  box-shadow:3px 3px 0 #e2dbc7,0 14px 26px -16px #2a231740;
+  transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s;
+}
+.category-tile:hover .cat-thumb{transform:translateY(-6px) rotate(-1deg);box-shadow:5px 7px 0 #e2dbc7,0 22px 34px -16px #2a231766}
+.category-tile .cat-photo{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:transform .6s cubic-bezier(.22,1,.36,1),filter .5s;
+}
+.category-tile:hover .cat-photo{transform:scale(1.12);filter:saturate(1.12)}
+.category-tile .cat-thumb:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 52%,rgba(28,26,18,.28));opacity:.65;
+}
+.category-tile{opacity:0;transform:translateY(16px);animation:catRise .6s cubic-bezier(.22,1,.36,1) forwards}
+.category-tile:nth-child(1){animation-delay:.04s}.category-tile:nth-child(2){animation-delay:.10s}
+.category-tile:nth-child(3){animation-delay:.16s}.category-tile:nth-child(4){animation-delay:.22s}
+.category-tile:nth-child(5){animation-delay:.28s}.category-tile:nth-child(6){animation-delay:.34s}
+.category-tile:nth-child(7){animation-delay:.40s}.category-tile:nth-child(8){animation-delay:.46s}
+.category-tile:nth-child(9){animation-delay:.52s}.category-tile:nth-child(10){animation-delay:.58s}
+@keyframes catRise{to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.category-tile{animation:none;opacity:1;transform:none}.category-tile .cat-photo{transition:none}}
+
+/* Keep the sign-in grid within its container, including Google iframe content. */
+#groceryCustomerStage .auth-composition{margin-inline:auto;min-width:0}
+#groceryCustomerStage .auth-composition>*{min-width:0;max-width:100%}
+#groceryCustomerStage .auth-card-content{min-width:0;max-width:100%}
+@media(max-width:900px){
+ #groceryCustomerStage .auth-composition{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:600px){
+ #groceryCustomerStage{padding:28px 16px 24px}
+ #groceryCustomerStage .auth-box{padding:62px 18px 24px}
+ #groceryCustomerStage .auth-intro h1{font-size:clamp(30px,8.5vw,42px);margin:14px 0 12px}
+ #groceryCustomerStage .auth-intro>p{max-width:28ch;margin-inline:auto}
+ #groceryCustomerStage .auth-kicker{display:none}
+ #groceryCustomerStage .auth-box h2{font-size:clamp(26px,7.5vw,32px)}
+ #groceryCustomerStage .auth-card-lead{font-size:13px}
+ #groceryCustomerStage .auth-brand-mark{left:12px;width:88px;height:88px;top:-38px}
+ #groceryCustomerStage .auth-brand-mark img{width:66px}
+ #groceryCustomerStage .social-divider{gap:8px;white-space:normal}
+ #groceryCustomerStage .auth-otp-pending{max-width:100%;padding:10px 12px;font-size:11px}
+}

@@ -1,0 +1,61 @@
+/* Header surfaces share the account scene's warm glass language. */
+#header{
+ background:#d33e0d;
+ border-bottom:1px solid rgba(255,255,255,.32);
+ box-shadow:0 10px 34px rgba(101,43,20,.14);
+}
+.head-inner{gap:clamp(9px,1.3vw,19px)}
+.head-inner .brand{width:164px;height:70px;overflow:visible;isolation:isolate;transition:transform .25s ease}
+.head-inner .brand:hover{transform:translateY(-2px)}
+.head-inner .brand img{width:100%;height:100%;object-fit:contain;filter:none;image-rendering:auto}
+.head-inner .delivery,.head-inner .desktop-cart,.head-inner .head-account .client-chip,.head-inner .menu-button{
+ border:1px solid rgba(255,255,255,.38);
+ background:linear-gradient(145deg,rgba(255,255,255,.24),rgba(255,247,231,.12));
+ box-shadow:inset 0 1px rgba(255,255,255,.28),0 8px 20px rgba(119,38,18,.12);
+ color:#fff;
+ border-radius:18px;
+ transition:transform .22s cubic-bezier(.2,1.2,.35,1),background .2s ease,box-shadow .2s ease;
+}
+.head-inner .delivery{padding:10px 13px;min-height:52px}
+.head-inner .delivery svg{flex:none}
+.head-inner .delivery small{color:#fff2e9}
+.head-inner .search{
+ min-height:52px;border:1px solid rgba(255,255,255,.9);
+ border-radius:18px;background:linear-gradient(135deg,#fffdf7,#fff4e9);
+ box-shadow:0 8px 24px rgba(105,40,20,.12),inset 0 1px #fff;
+ color:#465748;transition:box-shadow .2s ease,transform .2s ease;
+}
+.head-inner .search:focus-within{box-shadow:0 0 0 3px rgba(255,255,255,.3),0 12px 28px rgba(105,40,20,.2)}
+.head-inner .search input{color:#243b2d}
+.head-inner .search input::placeholder{color:#6b7a6e;opacity:1}
+.head-inner .desktop-cart{min-height:52px;padding:10px 15px}
+.head-inner .desktop-cart b{color:#fff;background:#17633d;border:1px solid rgba(255,255,255,.4);border-radius:99px;min-width:23px;height:23px;display:inline-grid;place-items:center;padding:0 5px;margin-left:4px}
+.head-inner .head-account .client-chip,.head-inner .head-account .client-chip.guest{min-height:52px;padding:10px 15px;background:linear-gradient(145deg,rgba(255,255,255,.24),rgba(255,247,231,.12));border-color:rgba(255,255,255,.38);box-shadow:inset 0 1px rgba(255,255,255,.28),0 8px 20px rgba(119,38,18,.12);color:#fff}
+.head-inner .delivery:hover,.head-inner .desktop-cart:hover,.head-inner .head-account:hover .client-chip,.head-inner .menu-button:hover{background:rgba(255,255,255,.29);transform:translateY(-2px);box-shadow:inset 0 1px rgba(255,255,255,.45),0 12px 22px rgba(119,38,18,.2)}
+.head-inner .delivery:active,.head-inner .desktop-cart:active,.head-inner .head-account:active .client-chip,.head-inner .menu-button:active{transform:scale(.97)}
+.head-inner .menu-button{min-height:44px}
+
+/* Keep the decorative glass edge but render content on a crisp surface. */
+#groceryCustomerStage .auth-box{
+ background:linear-gradient(145deg,rgba(255,254,250,.98),rgba(255,248,237,.96));
+ backdrop-filter:none;-webkit-backdrop-filter:none;
+ border-color:#fff;
+}
+.auth-brand-mark{background:linear-gradient(145deg,#fffdf8,#ffead5);backdrop-filter:none;-webkit-backdrop-filter:none}
+.auth-brand-mark img{filter:drop-shadow(0 3px 3px rgba(36,52,32,.12));image-rendering:auto}
+#groceryCustomerStage .google-pending{background:#fff;border-color:#d8e0d5;color:#435749}
+.auth-otp-pending{background:#edf6eb;color:#325b3d}
+#groceryCustomerStage .auth-card-lead{color:#4d6253}
+
+@media(max-width:1100px){.head-inner{grid-template-columns:136px minmax(0,1fr) auto auto}.head-inner .brand{width:136px;height:65px}.head-inner .delivery{min-width:0}}
+@media(max-width:760px){
+ .head-inner{grid-template-columns:104px minmax(0,1fr) 44px}
+ .head-inner .brand{width:104px;height:60px}
+ .head-inner .delivery{padding:7px 10px;min-height:44px;border-radius:14px}
+ .head-inner .delivery strong{font-size:11px}
+ .head-inner .delivery small{font-size:9px}
+ .head-inner .search{min-height:46px;border-radius:15px}
+ .head-inner .menu-button{border-radius:14px}
+}
+@media(max-width:390px){.head-inner{grid-template-columns:88px minmax(0,1fr) 44px;gap:7px}.head-inner .delivery{padding:6px 8px}.head-inner .brand{width:88px;height:55px}}
+@media(prefers-reduced-motion:reduce){.head-inner .brand,.head-inner .delivery,.head-inner .desktop-cart,.head-inner .head-account .client-chip,.head-inner .menu-button,.head-inner .search{transition:none!important}}

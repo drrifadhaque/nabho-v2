@@ -1,0 +1,13 @@
+.delivery-slot-panel{display:grid;gap:10px}
+.delivery-slot-panel p{margin:0;color:#52635b;line-height:1.5}
+.delivery-slot-panel label{font-weight:750;color:#173a2d}
+.delivery-slot-panel select{width:100%;min-height:52px;padding:12px 42px 12px 16px;border:1px solid #cddbd1;border-radius:14px;background:#fff;color:#153d2b;font:inherit;font-weight:700;cursor:pointer}
+.delivery-slot-panel select:focus-visible{outline:3px solid #ffb785;outline-offset:2px}
+.delivery-slot-panel small{color:#68776e;line-height:1.5}
+.manager-delivery-window{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:12px 0;padding:11px 13px;border-radius:14px;background:#e9f5ec;color:#174a2f;font-size:14px}
+.manager-delivery-window span{font-weight:750;text-align:right}
+.manager-slot-batch{display:grid;gap:12px;min-width:0}
+.manager-slot-batch+.manager-slot-batch{border-top:1px solid #dbe6dc;padding-top:18px;margin-top:4px}
+.manager-slot-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 13px;border-radius:13px;background:#dfeee2;color:#174a2f}
+.manager-slot-heading span{font-size:12px;font-weight:750;white-space:nowrap}
+@media(max-width:520px){.manager-delivery-window{align-items:flex-start;flex-direction:column}.manager-delivery-window span{text-align:left}}

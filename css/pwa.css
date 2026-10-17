@@ -1,0 +1,143 @@
+/* PWA layer — install banner, standalone-mode tweaks, app-feel polish.
+   Appended after the production CSS; only touches app-install concerns. */
+
+/* ---- Install banner ------------------------------------------------- */
+.install-banner{
+  position: fixed;
+  left: 12px; right: 12px;
+  bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: #171b14;
+  color: #eee6d5;
+  border-radius: 12px;
+  box-shadow: 0 14px 34px #00000052;
+  animation: install-rise .45s cubic-bezier(.22,1.25,.36,1) both;
+}
+.install-banner[hidden]{ display: none; }
+@keyframes install-rise{
+  from{ opacity:0; transform: translateY(14px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+.install-copy{ flex:1; min-width:0; display:flex; flex-direction:column; gap:3px; }
+.install-copy strong{
+  font: 600 13px/1.3 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color:#f4efdf;
+}
+.install-copy small{
+  font: 400 11px/1.4 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color:#b7bcaa;
+}
+.install-accept{
+  flex-shrink:0;
+  min-height:38px;
+  padding: 0 16px;
+  border:0;
+  border-radius:6px;
+  background:#dccaaa;
+  color:#262c20;
+  font: 600 12px/1 Fragment, monospace;
+  letter-spacing:.04em;
+  cursor:pointer;
+  transition: transform .18s, background .18s;
+}
+.install-accept:hover{ background:#e8d9bd; transform: translateY(-1px); }
+.install-accept:active{ transform: translateY(0); }
+.install-dismiss{
+  flex-shrink:0;
+  width:30px; height:30px;
+  display:grid; place-items:center;
+  border:0; border-radius:50%;
+  background:#ffffff14;
+  color:#cfd3c4;
+  font-size:18px; line-height:1;
+  cursor:pointer;
+}
+.install-dismiss:hover{ background:#ffffff26; color:#fff; }
+
+/* ---- Standalone (installed app) mode -------------------------------- */
+@media (display-mode: standalone){
+  /* No browser chrome: the announcement strip becomes the status bar band */
+  .store-announcement{
+    padding-top: env(safe-area-inset-top, 0px);
+    background: #a82f0a;
+  }
+  /* Header sticks immediately — there is no URL bar to scroll away */
+  #header{
+    position: sticky;
+    top: 0;
+    z-index: 40;
+  }
+  /* Bottom nav respects the home-indicator area */
+  #bottom-nav{
+    padding-bottom: calc(6px + env(safe-area-inset-bottom, 0px));
+  }
+  #cart-bar{
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+  }
+  .install-banner{ display:none !important; }
+}
+
+/* ---- App-feel touch/motion defaults --------------------------------- */
+html{
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+}
+button, a, .product, .category-tile{
+  touch-action: manipulation;
+}
+button, [role="button"]{
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Smooth momentum inside every horizontal scroller */
+.rail,
+.product-rail,
+.categories,
+.home-category-viewport{
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scroll-behavior: smooth;
+}
+
+/* Sheets: contain scroll so the page behind never moves */
+dialog.v2-sheet{ overscroll-behavior: contain; }
+dialog.v2-sheet::backdrop{
+  background: #171b1466;
+  animation: sheet-fade .26s ease both;
+}
+@keyframes sheet-fade{ from{ opacity:0 } to{ opacity:1 } }
+
+/* Kill the white flash between route changes */
+body{ background: #f6f3e9; }
+.page{ animation: page-fade .18s ease both; }
+@keyframes page-fade{ from{ opacity:0 } to{ opacity:1 } }
+
+/* Offline / stale notice */
+.offline-chip{
+  position: fixed;
+  left: 50%; top: calc(8px + env(safe-area-inset-top, 0px));
+  transform: translateX(-50%);
+  z-index: 70;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #171b14;
+  color: #e8dec9;
+  font: 500 11px/1 Fragment, monospace;
+  letter-spacing:.05em;
+  box-shadow: 0 6px 18px #00000033;
+}
+
+@media (max-width: 700px){
+  .install-banner{ left: 8px; right: 8px; }
+  .install-copy strong{ font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce){
+  .install-banner,
+  .page,
+  dialog.v2-sheet::backdrop{ animation: none !important; }
+}

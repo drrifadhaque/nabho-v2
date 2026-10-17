@@ -1,0 +1,72 @@
+[
+ {
+  "name": "Everyday essentials",
+  "slug": "everyday-essentials",
+  "count": 955,
+  "withImage": 16,
+  "art": "everyday-essentials.jpg"
+ },
+ {
+  "name": "Personal care",
+  "slug": "personal-care",
+  "count": 479,
+  "withImage": 3,
+  "art": "personal-care.jpg"
+ },
+ {
+  "name": "Oil & spices",
+  "slug": "oil-spices",
+  "count": 381,
+  "withImage": 4,
+  "art": "oil-spices.jpg"
+ },
+ {
+  "name": "Snacks & biscuits",
+  "slug": "snacks-biscuits",
+  "count": 210,
+  "withImage": 8,
+  "art": "snacks-biscuits.jpg"
+ },
+ {
+  "name": "Dairy & frozen",
+  "slug": "dairy-frozen",
+  "count": 182,
+  "withImage": 67,
+  "art": "dairy-frozen.jpg"
+ },
+ {
+  "name": "Rice, atta & dal",
+  "slug": "rice-atta-dal",
+  "count": 140,
+  "withImage": 11,
+  "art": "rice-atta-dal.jpg"
+ },
+ {
+  "name": "Home & cleaning",
+  "slug": "home-cleaning",
+  "count": 94,
+  "withImage": 1,
+  "art": "home-cleaning.jpg"
+ },
+ {
+  "name": "Chocolates & sweets",
+  "slug": "chocolates-sweets",
+  "count": 73,
+  "withImage": 0,
+  "art": "chocolates-sweets.jpg"
+ },
+ {
+  "name": "Drinks & beverages",
+  "slug": "drinks-beverages",
+  "count": 72,
+  "withImage": 6,
+  "art": "drinks-beverages.jpg"
+ },
+ {
+  "name": "Baby care",
+  "slug": "baby-care",
+  "count": 55,
+  "withImage": 0,
+  "art": "baby-care.jpg"
+ }
+]

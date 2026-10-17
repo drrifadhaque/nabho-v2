@@ -1,0 +1,49 @@
+/* Crawlable customer information pages and a compact, useful site footer. */
+#footer .footer-links{display:grid;grid-template-columns:repeat(2,minmax(110px,1fr));gap:5px 25px;align-content:start}
+#footer .footer-links a{display:block;min-height:30px;margin:0;color:#dfd3bb;font-size:12px;text-decoration:none}
+#footer .footer-links a:hover{text-decoration:underline;text-underline-offset:4px;color:#fff}
+#footer .footer-meta{min-width:190px}
+@media(max-width:760px){#footer .footer-links{width:100%;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 15px}}
+
+body.info-body{margin:0;background:#f8f5eb;color:#243a2b;font-family:'DM Sans',Arial,sans-serif;font-size:16px}
+.info-top{background:#d33e0d;color:#fff;box-shadow:0 12px 32px rgba(90,38,13,.13)}
+.info-top-inner{max-width:1220px;margin:auto;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.info-logo{display:block;width:150px;flex:none}
+.info-logo img{display:block;width:100%;height:72px;object-fit:contain}
+.info-nav{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.info-nav a{color:#fff;text-decoration:none;font-size:13px;font-weight:700;padding:11px 15px;border:1px solid rgba(255,255,255,.42);border-radius:16px;background:rgba(255,255,255,.14)}
+.info-nav a:hover{background:rgba(255,255,255,.27)}
+.info-wrap{max-width:1120px;margin:auto;padding:55px 28px 85px}
+.info-breadcrumb{font-size:12px;color:#677b68;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+.info-breadcrumb a{color:#bd421b;text-decoration:none}
+.info-hero{max-width:800px;margin:25px 0 38px}
+.info-eyebrow{display:block;color:#c45328;letter-spacing:.13em;font-size:11px;font-weight:800;text-transform:uppercase;margin-bottom:12px}
+.info-hero h1{font:400 clamp(42px,5.8vw,78px)/1.06 Georgia,'Times New Roman',serif;letter-spacing:-.055em;margin:0 0 17px;color:#193a2a}
+.info-hero p{font-size:17px;line-height:1.7;color:#596d5c;max-width:680px;margin:0}
+.info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.info-card{background:#fffdf8;border:1px solid #e8e2d3;border-radius:24px;padding:28px 30px;box-shadow:0 14px 34px rgba(29,54,32,.045)}
+.info-card.wide{grid-column:1/-1}
+.info-card h2{font:400 28px/1.2 Georgia,'Times New Roman',serif;color:#234333;margin:0 0 13px;letter-spacing:-.03em}
+.info-card p,.info-card li{line-height:1.7;color:#526454;font-size:14px}
+.info-card p:last-child{margin-bottom:0}
+.info-card ul{padding-left:20px;margin:0}
+.info-card li+li{margin-top:7px}
+.info-card a{color:#bb431d;text-underline-offset:3px}
+.info-card details{border-top:1px solid #e8e2d3;padding:15px 0;border-bottom:0}
+.info-card details:first-of-type{border-top:0}
+.info-card summary{font-size:15px;color:#234333;font-weight:700}
+.info-card details p{margin-bottom:0}
+.info-photo{width:100%;height:auto;max-height:375px;object-fit:cover;border-radius:18px;display:block;margin:18px 0 0}
+.info-actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 0}
+.info-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 19px;text-decoration:none;font-size:13px;font-weight:800;border-radius:14px}
+.info-actions .solid{background:#d33e0d;color:#fff}
+.info-actions .light{background:#fff;border:1px solid #e3d8c4;color:#234333}
+.info-footer{background:#1b261d;color:#f3efdf;padding:38px 28px}
+.info-footer-inner{max-width:1120px;margin:auto;display:flex;align-items:flex-start;justify-content:space-between;gap:25px;flex-wrap:wrap}
+.info-footer strong{font:400 26px Georgia,serif}
+.info-footer p{color:#bdc8b8;font-size:12px;margin:8px 0}
+.info-footer nav{display:grid;grid-template-columns:repeat(3,minmax(110px,1fr));gap:12px 24px}
+.info-footer a{color:#e7dbbd;text-decoration:none;font-size:12px}
+.info-footer a:hover{text-decoration:underline}
+.info-footer small{display:block;color:#a9baa7;font-size:11px;margin-top:20px}
+@media(max-width:700px){.info-top-inner{padding:10px 16px;flex-wrap:wrap;gap:5px}.info-logo{width:116px}.info-logo img{height:56px}.info-nav{gap:6px}.info-nav a{font-size:11px;padding:9px 11px;border-radius:12px}.info-wrap{padding:34px 16px 55px}.info-hero{margin:20px 0 28px}.info-hero p{font-size:15px}.info-grid{grid-template-columns:1fr}.info-card,.info-card.wide{grid-column:1;padding:22px 20px}.info-footer nav{grid-template-columns:repeat(2,minmax(110px,1fr))}}

@@ -1,0 +1,110 @@
+/* Nabho Bazaar account entry: an editorial scene with a floating glass mark. */
+.auth-page{max-width:none!important;width:100%;padding:clamp(16px,3vw,48px) clamp(12px,3vw,48px) 70px}
+#groceryCustomerStage{
+ width:min(100%,1320px);min-height:clamp(590px,72vh,820px);margin:0 auto 34px;
+ padding:clamp(32px,5vw,76px);box-sizing:border-box;border-radius:34px;
+ background:
+  radial-gradient(ellipse 50% 70% at 86% 18%,rgba(242,123,66,.31),transparent 68%),
+  radial-gradient(ellipse 52% 66% at 4% 95%,rgba(121,172,124,.17),transparent 74%),
+  linear-gradient(134deg,#142b23 2%,#163e30 53%,#8b4b2b 125%);
+ border:1px solid rgba(255,255,255,.18);
+ box-shadow:0 34px 85px -34px rgba(19,44,31,.6),inset 0 1px rgba(255,255,255,.15);
+ overflow:hidden;isolation:isolate;
+}
+#groceryCustomerStage:before{
+ content:"";position:absolute;inset:15px;border:1px solid rgba(255,255,255,.11);
+ border-radius:25px;pointer-events:none;z-index:0;
+}
+#groceryCustomerStage .login-ambient .orb{filter:blur(82px);opacity:.42}
+#groceryCustomerStage .orb-1{background:#f46c37;width:380px;height:380px;top:-110px;right:-40px;left:auto}
+#groceryCustomerStage .orb-2{background:#aad5a0;width:380px;height:380px;bottom:-200px;left:-60px;right:auto}
+#groceryCustomerStage .orb-3{background:#eab170;width:260px;height:260px;top:44%;right:25%;opacity:.22}
+.auth-orbit{position:absolute;display:block;width:520px;height:520px;border:1px solid rgba(247,239,208,.14);border-radius:50%;pointer-events:none}
+.auth-orbit-one{top:-300px;left:-210px;transform:rotate(-24deg);animation:authOrbit 28s ease-in-out infinite alternate}
+.auth-orbit-two{bottom:-350px;right:-220px;border-color:rgba(250,191,138,.2);animation:authOrbit 32s ease-in-out infinite alternate-reverse}
+@keyframes authOrbit{to{transform:translate(40px,25px) rotate(24deg)}}
+.auth-composition{position:relative;z-index:2;width:min(100%,1100px);display:grid;grid-template-columns:minmax(0,1fr) minmax(350px,440px);gap:clamp(40px,7vw,110px);align-items:center}
+.auth-intro{color:#f8f4e7;animation:authIntroIn .8s cubic-bezier(.19,1,.22,1) both}
+@keyframes authIntroIn{from{opacity:0;transform:translate3d(-25px,16px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+.auth-kicker,.auth-card-kicker,.auth-intro-markers{font-family:Fragment,monospace;letter-spacing:.12em}
+.auth-kicker{display:inline-flex;align-items:center;gap:11px;color:#f0cba5;font-size:11px;line-height:1.5}
+.auth-kicker:before{content:"";width:22px;height:1px;background:#f0cba5}
+.auth-intro h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(52px,5.8vw,83px);font-weight:400;letter-spacing:-.065em;line-height:1.02;margin:30px 0 24px;color:#fff9eb;text-wrap:balance}
+.auth-intro h1 em{font-weight:400;color:#ffc18a}
+.auth-intro>p{font-size:clamp(14px,1.3vw,17px);line-height:1.75;color:#d3dfd1;max-width:480px;margin:0}
+.auth-intro-markers{display:flex;flex-wrap:wrap;gap:10px 17px;margin-top:38px;color:#b6ccba;font-size:9px;line-height:1.5}
+.auth-intro-markers span{white-space:nowrap}
+#groceryCustomerStage .auth-box{
+ position:relative;z-index:2;max-width:none;width:100%;box-sizing:border-box;
+ margin:32px 0 0;padding:70px 35px 34px;
+ border-radius:29px;border:1px solid rgba(255,255,255,.72);
+ background:linear-gradient(154deg,rgba(255,255,255,.87),rgba(255,248,232,.73));
+ backdrop-filter:blur(28px) saturate(150%);-webkit-backdrop-filter:blur(28px) saturate(150%);
+ box-shadow:0 35px 85px -30px rgba(4,20,13,.62),inset 0 1px rgba(255,255,255,.95),inset 0 -1px rgba(255,255,255,.42);
+ animation:authCardIn .85s cubic-bezier(.19,1,.22,1) .1s both;
+}
+#groceryCustomerStage .auth-box:hover{transform:none;box-shadow:0 35px 85px -30px rgba(4,20,13,.62),inset 0 1px rgba(255,255,255,.95)}
+@keyframes authCardIn{from{opacity:0;transform:translate3d(28px,28px,0) rotate(2deg) scale(.96)}to{opacity:1;transform:translate3d(0,0,0) rotate(0) scale(1)}}
+.auth-brand-mark{
+ position:absolute;top:-50px;left:-47px;width:130px;height:130px;border-radius:50%;
+ display:grid;place-items:center;transform:rotate(-13deg);
+ background:linear-gradient(145deg,rgba(255,255,255,.89),rgba(255,234,203,.78));
+ backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+ border:1px solid rgba(255,255,255,.89);
+ box-shadow:0 22px 45px -19px rgba(7,26,17,.64),0 4px 0 rgba(255,255,255,.35) inset;
+ animation:authFloat 6s ease-in-out 1s infinite;
+}
+.auth-brand-mark:after{content:"";position:absolute;inset:8px;border:1px solid rgba(28,77,52,.16);border-radius:50%;pointer-events:none}
+.auth-brand-mark img{display:block;width:94px;height:auto;max-height:90px;object-fit:contain;transform:rotate(13deg);filter:drop-shadow(0 5px 7px rgba(36,52,32,.14))}
+@keyframes authFloat{0%,100%{translate:0 0}50%{translate:0 -8px}}
+.auth-card-content{position:relative;z-index:1}
+.auth-card-kicker{color:#59735c;font-size:10px;font-weight:700}
+#groceryCustomerStage .auth-box h2{font-family:Georgia,'Times New Roman',serif;font-size:clamp(31px,3.1vw,40px);font-weight:400;letter-spacing:-.055em;line-height:1.08;color:#1d3829;margin:10px 0 8px}
+#groceryCustomerStage .auth-card-lead{font-size:14px;color:#617365;margin:0 0 25px}
+#groceryCustomerStage .google-btn-wrap{width:100%;min-height:48px;display:flex;align-items:center;justify-content:center;margin:0 auto}
+#groceryCustomerStage .google-btn-wrap>div{max-width:100%}
+#groceryCustomerStage .google-pending{display:flex;align-items:center;justify-content:center;gap:10px;min-height:46px;margin:0;padding:0 16px;box-sizing:border-box;color:#6e766d;font-size:13px;font-weight:600;border:1px solid rgba(49,78,54,.18);border-radius:24px;background:rgba(255,255,255,.61)}
+#groceryCustomerStage .google-pending:before{content:"G";display:grid;place-items:center;width:21px;height:21px;border-radius:50%;font:700 13px Arial,sans-serif;color:#4285f4;background:#fff;border:1px solid #dfe5eb}
+#groceryCustomerStage .google-pending[hidden]{display:none}
+#groceryCustomerStage .google-btn-wrap:empty{display:none}
+#groceryCustomerStage .social-divider{color:#7a8075;font-family:Fragment,monospace;font-size:10px;font-weight:500;letter-spacing:.06em;margin:24px 0 23px;white-space:nowrap}
+#groceryCustomerStage .social-divider:before,#groceryCustomerStage .social-divider:after{border-color:rgba(65,84,64,.18)}
+#groceryCustomerStage .auth-box label{color:#47624e;font-size:11px;letter-spacing:.07em;margin-bottom:8px}
+#groceryCustomerStage .auth-box input[type=tel]{border-radius:13px;background:rgba(255,255,255,.84)}
+#groceryCustomerStage .primary.full{background:linear-gradient(135deg,#f16d37,#cf3907);box-shadow:0 18px 32px -15px rgba(184,68,23,.65);border-radius:14px}
+#groceryCustomerStage .primary.full:hover{box-shadow:0 21px 38px -16px rgba(184,68,23,.72)}
+#groceryCustomerStage .auth-card-footnote{border-top:1px solid rgba(47,80,53,.14);padding-top:19px;margin:24px 0 0;color:#768175;font-size:11px;line-height:1.55;text-align:center}
+#groceryCustomerStage .auth-otp-copy{font-size:13px;line-height:1.6;color:#4f6755;margin:0 0 16px}
+.auth-otp-pending{display:flex;align-items:flex-start;gap:10px;padding:15px 16px;border-radius:13px;border:1px solid rgba(73,111,78,.23);background:rgba(232,242,229,.65);color:#47664b;font-size:12px;line-height:1.55}
+.auth-otp-pending-dot{flex:none;width:9px;height:9px;margin-top:5px;border-radius:50%;background:#eaa260;box-shadow:0 0 0 4px rgba(234,162,96,.2)}
+@media(max-width:900px){
+ #groceryCustomerStage{min-height:0;padding:48px 38px 58px}
+ .auth-composition{grid-template-columns:1fr;gap:28px;max-width:510px}
+ .auth-intro{text-align:center}
+ .auth-kicker{justify-content:center}
+ .auth-intro h1{font-size:clamp(43px,8vw,66px);margin:19px 0 13px}
+ .auth-intro>p{margin:auto}
+ .auth-intro-markers{justify-content:center;margin-top:20px}
+ #groceryCustomerStage .auth-box{margin:32px 0 0}
+ .auth-brand-mark{left:-31px;top:-42px;width:112px;height:112px}
+ .auth-brand-mark img{width:82px}
+}
+@media(max-width:600px){
+ .auth-page{padding:12px 10px 35px}
+ #groceryCustomerStage{padding:44px 17px 42px;border-radius:25px;margin-bottom:15px}
+ #groceryCustomerStage:before{inset:8px;border-radius:19px}
+ .auth-composition{gap:15px}
+ .auth-kicker{font-size:8px;letter-spacing:.055em}
+ .auth-intro h1{font-size:clamp(38px,10vw,51px)}
+ .auth-intro>p{font-size:13px;line-height:1.55;max-width:330px}
+ .auth-intro-markers{display:none}
+ #groceryCustomerStage .auth-box{padding:72px 21px 24px;margin:36px 0 0;border-radius:22px}
+ .auth-brand-mark{left:-10px;top:-43px;width:104px;height:104px}
+ .auth-brand-mark img{width:79px}
+ #groceryCustomerStage .auth-box h2{font-size:32px}
+ #groceryCustomerStage .auth-card-lead{margin-bottom:19px}
+ #groceryCustomerStage .social-divider{font-size:8px;letter-spacing:.025em;margin:18px 0}
+ #groceryCustomerStage .auth-box input[type=tel]{font-size:16px}
+}
+@media(max-width:370px){#groceryCustomerStage .auth-box{padding-left:15px;padding-right:15px}.auth-kicker{font-size:7px}}
+@media(prefers-reduced-motion:reduce){#groceryCustomerStage .auth-box,.auth-intro,.auth-brand-mark,.auth-orbit{animation:none!important}}

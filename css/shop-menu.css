@@ -1,0 +1,18 @@
+dialog.shop-menu-dialog{position:fixed;inset:0 0 0 auto;margin:0;width:min(395px,100vw);max-width:none;max-height:100dvh;height:100dvh;border-radius:25px 0 0 25px;padding:22px;background:#f8f4e9;border:0;box-shadow:-20px 0 70px #1e2e2140;animation:store-menu-in .23s cubic-bezier(.2,.8,.2,1) both}
+dialog.shop-menu-dialog .modal-head{position:absolute;top:22px;right:18px;margin:0;z-index:2}
+dialog.shop-menu-dialog .modal-head .icon-button{width:44px;height:44px;background:#ece6d6;color:#394d3c}
+.shop-menu{display:flex;flex-direction:column;min-height:100%;gap:24px;padding-top:4px}
+.shop-menu-brand{display:flex;gap:11px;align-items:center;width:calc(100% - 52px);min-height:54px;color:#2d3b2e;text-decoration:none}
+.shop-menu-brand img{width:64px;height:53px;object-fit:contain;background:#de571e;border-radius:12px;padding:6px}
+.shop-menu-brand>span{font-size:18px;font-weight:850;letter-spacing:-.025em}.shop-menu-brand small{display:block;font-size:11px;font-weight:600;color:#7a816e;margin-top:3px}
+.shop-menu-location{display:flex;align-items:center;gap:11px;width:100%;background:#efe4d0;border:1px solid #ddcaae;border-radius:17px;padding:16px 12px;min-height:78px;color:#704e29;text-align:left;cursor:pointer}
+.shop-menu-location>svg:first-child{flex:none}.shop-menu-location>span{min-width:0;flex:1}.shop-menu-location b{display:block;font-size:13px}.shop-menu-location small{display:block;font-size:11px;color:#86734e;margin-top:5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.shop-menu nav{display:grid;gap:10px}.shop-menu nav>a{display:flex;align-items:center;gap:13px;min-height:72px;padding:14px 12px;background:#fffdf7;border:1px solid #e4dccb;border-radius:17px;text-decoration:none;color:#344b36;transition:background .18s,transform .18s}
+.shop-menu nav>a:hover{background:#f0eadb;transform:translateX(-3px)}.shop-menu nav>a>svg:first-child{color:#c27135;flex:none}.shop-menu nav>a>span{flex:1;min-width:0}.shop-menu nav b{display:block;font-size:14px}.shop-menu nav small{display:block;color:#7b8270;font-size:11px;margin-top:4px}
+.shop-menu-bottom{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:20px;border-top:1px solid #ded5c1;font-size:11px;color:#66735e}.shop-menu-bottom a{display:flex;align-items:center;gap:8px;min-height:44px;color:#4c6147;font-weight:750}
+.shop-menu a:focus-visible,.shop-menu button:focus-visible{outline:3px solid #bf783f;outline-offset:3px}
+dialog.shop-menu-dialog.is-closing{animation:store-menu-out .18s ease both}
+@keyframes store-menu-in{from{opacity:0;transform:translateX(35px)}to{opacity:1;transform:none}}
+@keyframes store-menu-out{to{opacity:0;transform:translateX(35px)}}
+@media(max-height:650px){.shop-menu{gap:16px}.shop-menu nav>a{min-height:60px;padding:10px}.shop-menu-bottom{padding-top:10px}}
+@media(prefers-reduced-motion:reduce){dialog.shop-menu-dialog,dialog.shop-menu-dialog.is-closing{animation:none}.shop-menu nav>a{transition:none}}
